@@ -20,7 +20,7 @@ class Transaksi extends Migration
 				'constraint'     => 11,
 				'unsigned'       => true,
 			],
-			'id_user' => [
+			'id_pembeli' => [
 				'type'           => 'INT',
 				'constraint'     => 11,
 				'unsigned'       => true,
@@ -56,7 +56,7 @@ class Transaksi extends Migration
 		]);
 
 		$this->forge->addKey('id', TRUE);
-		$this->forge->addForeignKey('id_user', 'user', 'id');
+		$this->forge->addForeignKey('id_pembeli', 'user', 'id');
 		$this->forge->addForeignKey('id_barang', 'barang', 'id');
 		$this->forge->createTable('transaksi');
 	}
